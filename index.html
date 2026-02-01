@@ -407,20 +407,20 @@
 
     // --- FIREBASE SETUP ---
     const firebaseConfig = {
-        apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_PROJECT.firebaseapp.com",
-        databaseURL: "https://YOUR_PROJECT.firebaseio.com",
-        projectId: "YOUR_PROJECT",
-        storageBucket: "YOUR_PROJECT.appspot.com",
-        messagingSenderId: "SENDER_ID",
-        appId: "APP_ID"
+        apiKey: "AIzaSyCpwKDZO0BA4lSX8-njT7FwJrwQhIGtkMc",
+        authDomain: "nimra-app.firebaseapp.com",
+        databaseURL: "https://nimra-app-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "nimra-app",
+        storageBucket: "nimra-app.firebasestorage.app",
+        messagingSenderId: "133830743753",
+        appId: "1:133830743753:web:6ce3e2d3f70d6bb973df18",
+        measurementId: "G-3ENBPWHZ8C"
     };
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
 
     // --- FAN NOTES ---
     window.onload = function() {
-        // Load all notes from Firebase
         db.ref('fanNotes').on('value', snapshot => {
             document.getElementById('messages').innerHTML = "";
             snapshot.forEach(child => displayMessage(child.val()));
@@ -428,18 +428,17 @@
     }
 
     function addMessage(){
-        const textarea = document.getElementById('fanMessage');
-        const text = textarea.value.trim();
+        const text = document.getElementById('fanMessage').value.trim();
+        const name = document.getElementById('fanName').value.trim() || "Anonymous";
         if(text===""){ alert("Please write something."); return; }
-        // Push to Firebase
-        db.ref('fanNotes').push(text);
-        textarea.value="";
+        db.ref('fanNotes').push({name, message: text, timestamp: Date.now()});
+        document.getElementById('fanMessage').value="";
     }
 
-    function displayMessage(text){
+    function displayMessage(data){
         const messagesDiv=document.getElementById('messages');
         const msg=document.createElement('p');
-        msg.textContent=text;
+        msg.innerHTML = `<strong>${data.name}:</strong> ${data.message}`;
         msg.style.background="#f5f5dc";
         msg.style.padding="10px";
         msg.style.marginBottom="10px";
