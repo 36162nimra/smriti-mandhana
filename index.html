@@ -373,6 +373,10 @@
     <p>SMRITI MANDHANA 🤍</p>
 </footer>
 
+<!-- FIREBASE SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
 <script>
     // --- LOGIN ---
     function unlockTribute() {
@@ -401,21 +405,37 @@
     window.addEventListener('resize', initCanvas);
     setup(); animate();
 
+    // --- FIREBASE SETUP ---
+    const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT.firebaseapp.com",
+        databaseURL: "https://YOUR_PROJECT.firebaseio.com",
+        projectId: "YOUR_PROJECT",
+        storageBucket: "YOUR_PROJECT.appspot.com",
+        messagingSenderId: "SENDER_ID",
+        appId: "APP_ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
     // --- FAN NOTES ---
     window.onload = function() {
-        const saved = JSON.parse(localStorage.getItem('fanNotes')) || [];
-        saved.forEach(note=>displayMessage(note));
+        // Load all notes from Firebase
+        db.ref('fanNotes').on('value', snapshot => {
+            document.getElementById('messages').innerHTML = "";
+            snapshot.forEach(child => displayMessage(child.val()));
+        });
     }
+
     function addMessage(){
         const textarea = document.getElementById('fanMessage');
         const text = textarea.value.trim();
         if(text===""){ alert("Please write something."); return; }
-        displayMessage(text);
-        let savedNotes = JSON.parse(localStorage.getItem('fanNotes')) || [];
-        savedNotes.push(text);
-        localStorage.setItem('fanNotes', JSON.stringify(savedNotes));
+        // Push to Firebase
+        db.ref('fanNotes').push(text);
         textarea.value="";
     }
+
     function displayMessage(text){
         const messagesDiv=document.getElementById('messages');
         const msg=document.createElement('p');
@@ -430,4 +450,4 @@
 </script>
 
 </body>
-</html> 
+</html>
