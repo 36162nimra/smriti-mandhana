@@ -378,10 +378,15 @@
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
 <script>
+    // --- ADMIN SETUP ---
+    let isAdmin = false;
+    const adminName = "Nimra"; // your name for admin login
+
     // --- LOGIN ---
     function unlockTribute() {
         const name = document.getElementById('fanName').value;
         if(name.trim() === "") { alert("Please enter your name."); return; }
+        if(name.trim() === adminName) isAdmin = true; // admin check
         const screen = document.getElementById('login-screen');
         screen.style.transform = 'translateY(-100%)';
         setTimeout(()=>screen.style.display='none',1000);
@@ -423,7 +428,7 @@
     window.onload = function() {
         db.ref('fanNotes').on('value', snapshot => {
             document.getElementById('messages').innerHTML = "";
-            snapshot.forEach(child => displayMessage(child.val()));
+            snapshot.forEach(child => displayMessage(child.key, child.val()));
         });
     }
 
@@ -435,7 +440,7 @@
         document.getElementById('fanMessage').value="";
     }
 
-    function displayMessage(data){
+    function displayMessage(key, data){
         const messagesDiv=document.getElementById('messages');
         const msg=document.createElement('p');
         msg.innerHTML = `<strong>${data.name}:</strong> ${data.message}`;
@@ -444,9 +449,17 @@
         msg.style.marginBottom="10px";
         msg.style.borderRadius="5px";
         msg.style.border="1px solid #ede6d6";
+        if(isAdmin){
+            const delBtn=document.createElement('button');
+            delBtn.textContent="Delete";
+            delBtn.style.marginLeft="10px";
+            delBtn.style.cursor="pointer";
+            delBtn.onclick=()=>db.ref('fanNotes/'+key).remove();
+            msg.appendChild(delBtn);
+        }
         messagesDiv.appendChild(msg);
     }
 </script>
 
 </body>
-</html> 
+</html>
