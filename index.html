@@ -247,9 +247,7 @@
 <body>
     
 
-<!-- Admin Login Button -->
-<button onclick="adminLogin()" style="position:fixed; top:10px; right:10px; z-index:2000;">Admin Login</button>
-<!-- Admin Status -->
+
 <div id="adminStatus" style="
     position:fixed;
     top:45px;
@@ -402,6 +400,37 @@
         <br><br>
         <button onclick="addMessage()" class="login-btn" style="padding:10px 30px; font-size:1rem;">Send</button>
         <div id="messages" style="margin-top:30px; text-align:left;"></div>
+
+        <!-- Admin Controls (subtle) -->
+<div style="margin-top:15px; font-size:0.9rem; color:#8b7355;">
+    <span id="adminHint">Admin?</span>
+    <button onclick="adminLogin()" style="
+        background:none;
+        border:none;
+        color:#5d4037;
+        cursor:pointer;
+        text-decoration:underline;
+        font-size:0.9rem;
+    ">Login</button>
+</div>
+
+<div id="adminStatus" style="
+    display:none;
+    margin-top:10px;
+    font-size:0.9rem;
+    color:#5d4037;
+">
+    <strong>Admin logged in</strong>
+    ·
+    <button onclick="adminLogout()" style="
+        background:none;
+        border:none;
+        color:#5d4037;
+        cursor:pointer;
+        text-decoration:underline;
+        font-size:0.9rem;
+    ">Logout</button>
+</div>
     </div>
 </section>
 
