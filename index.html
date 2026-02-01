@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smriti Mandhana | The Beige Edition</title>
+    <title>Smriti Mandhana</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@200;300;400;600&family=Prata&display=swap" rel="stylesheet">
     <style>
         :root {
-            --beige-bg: #f5f5dc; /* Classic Beige */
+            --beige-bg: #f5f5dc;
             --warm-sand: #ede6d6;
             --deep-tan: #8b7355;
             --champagne-gold: #d4af37;
@@ -25,7 +25,6 @@
             scroll-behavior: smooth;
         }
 
-        /* --- VINTAGE DUST PARTICLES --- */
         #particle-canvas {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -34,7 +33,6 @@
             opacity: 0.6;
         }
 
-        /* --- LOGIN SCREEN --- */
         #login-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -88,7 +86,6 @@
 
         .login-btn:hover { background: var(--deep-tan); }
 
-        /* --- SECTIONS --- */
         section {
             min-height: 100vh;
             padding: 120px 10vw;
@@ -128,7 +125,6 @@
             text-align: justify;
         }
 
-        /* --- BIO GRID --- */
         .bio-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -145,7 +141,6 @@
 
         .img-frame img { width: 100%; display: block; filter: sepia(20%); }
 
-        /* --- GALLERY SECTION --- */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -168,7 +163,6 @@
 
         .gallery-item:hover img { transform: scale(1.1); }
 
-        /* --- STATS --- */
         .stats-container {
             display: flex;
             justify-content: space-between;
@@ -182,7 +176,6 @@
         .stat-item { text-align: center; flex: 1; min-width: 150px; }
         .stat-item h4 { font-family: 'Prata'; font-size: 2.5rem; color: var(--deep-tan); }
 
-        /* --- TRIBUTE --- */
         .tribute-card {
             background: white;
             padding: 80px;
@@ -190,7 +183,6 @@
             border-radius: 5px;
         }
 
-        /* --- SCROLL INDICATOR --- */
         .scroll-down {
             position: absolute;
             bottom: 30px;
@@ -203,7 +195,7 @@
             font-size: 0.7rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            opacity: 0; /* Hidden initially */
+            opacity: 0;
             transition: opacity 2s ease-in;
             z-index: 10;
         }
@@ -246,189 +238,181 @@
 </head>
 <body>
 
-    <canvas id="particle-canvas"></canvas>
+<canvas id="particle-canvas"></canvas>
 
-    <!-- LOGIN -->
-    <div id="login-screen">
-        <div class="login-card">
-            <h1>S. Mandhana</h1>
-            <p style="letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 20px;">EST. 1996</p>
-            <input type="text" class="login-input" placeholder="Your Name" id="fanName">
-            <br>
-            <button class="login-btn" onclick="unlockTribute()">Open Gallery</button>
+<!-- LOGIN -->
+<div id="login-screen">
+    <div class="login-card">
+        <h1>Smriti Mandhana: An Inspiration Beyond Cricket</h1>
+        <input type="text" class="login-input" placeholder="Your Name" id="fanName">
+        <br>
+        <button class="login-btn" onclick="unlockTribute()">Open Gallery</button>
+    </div>
+</div>
+
+<!-- HERO -->
+<section>
+    <div class="content-box">
+        <span class="italic-sub">Smriti Mandhana – Early Life</span>
+        <h2>Elegance in Motion</h2>
+        <p>Smriti Mandhana was born on July 18, 1996, in Mumbai, Maharashtra. From a young age, she loved cricket and often played with boys in her neighborhood. Her parents encouraged her passion. She trained at the Mumbai Cricket Association Academy, developing the skills, confidence, and discipline that would later make her a star in Indian women's cricket.</p>
+    </div>
+    <div class="scroll-down" id="scrollIndicator">
+        <span>Scroll Down</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- CRICKET CAREER -->
+<section>
+    <div class="bio-grid content-box">
+        <div class="img-frame">
+            <img src="https://static.cricbuzz.com/a/img/v1/1080x608/i1/c783959/her-answer-was-always-i-am-ready.jpg" alt="Smriti Sangli">
+        </div>
+        <div>
+            <span class="italic-sub">Smriti Mandhana - Cricket Career</span>
+            <h2>The Roots</h2>
+            <p>Smriti started competitive cricket in Maharashtra, quickly becoming one of the top run-scorers. She debuted in T20Is in March 2013 and ODIs in April 2013. She played in ICC World Cups, scored centuries abroad, won ICC awards, and led franchise teams like Royal Challengers Bangalore in the WPL. Her left-handed style and aggressive batting have inspired fans worldwide.</p>
         </div>
     </div>
+</section>
 
-    <!-- HERO -->
-    <section>
-        <div class="content-box">
-            <span class="italic-sub">The Art of the Off-Side</span>
-            <h2>Elegance in Motion</h2>
-            <p>For ten years, the world of cricket has stood still every time Smriti Mandhana leans into a cover drive. In a sport often defined by raw power, she remains the custodian of grace. Her journey is not just recorded in scorecards, but in the hearts of millions who find beauty in her every move.</p>
-        </div>
+<!-- GALLERY -->
+<section>
+    <span class="italic-sub">A Visual Journey</span>
+    <h2>The Gallery</h2>
+    <div class="gallery-grid content-box">
+        <div class="gallery-item"><img src="https://thebridge.in/h-upload/2024/03/18/52869-smriti-mandhana.webp" alt="Mandhana 1"></div>
+        <div class="gallery-item"><img src="https://www.royalchallengers.com/PRRCB01/public/styles/1061x767_landscape/public/2024-10/390000-ezgif.com-webp-to-jpg-converter.jpg?itok=-nH_dhgf" alt="Mandhana 2"></div>
+        <div class="gallery-item"><img src="https://i0.wp.com/indiasportshub.com/wp-content/uploads/2025/09/IMG_2813-scaled.jpeg" alt="Mandhana 3"></div>
+        <div class="gallery-item"><img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_800,q_50/lsci/db/PICTURES/CMS/388600/388699.jpg" alt="Mandhana 4"></div>
+        <div class="gallery-item"><img src="https://thebridge.in/h-upload/2025/06/08/61842-smriti.webp" alt="Mandhana 5"></div>
+        <div class="gallery-item"><img src="https://ddindia.co.in/wp-content/uploads/2025/10/Smriti-Mandhana.jpg" alt="Mandhana 6"></div>
+    </div>
+</section>
 
-        <!-- SCROLL INDICATOR -->
-        <div class="scroll-down" id="scrollIndicator">
-            <span>Scroll Down</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- EARLY LIFE -->
-    <section>
-        <div class="bio-grid content-box">
-            <div class="img-frame">
-                <img src="https://static.cricbuzz.com/a/img/v1/1080x608/i1/c783959/her-answer-was-always-i-am-ready.jpg" alt="Smriti Sangli">
+<!-- ACHIEVEMENTS -->
+<section>
+    <div class="content-box">
+        <span class="italic-sub">Achievements & Honors</span>
+        <h2>Milestones</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <h4>2018</h4>
+                <p>Arjuna Award</p>
             </div>
-            <div>
-                <span class="italic-sub">From Sangli to the World</span>
-                <h2>The Roots</h2>
-                <p>Born into a family where cricket was a shared language, Smriti Mandhana's story began in Mumbai and blossomed in Sangli. Inspired by her brother’s left-handed stance, she mirrored him—unknowingly creating a style that would one day be compared to the greatest southpaws in the history of the game.</p>
-                <p>By the age of nine, the talent was undeniable. Her family became her first team—her father managing her path and her mother meticulously crafting her nutrition. She was a prodigy who didn't just play; she belonged.</p>
+            <div class="stat-item">
+                <h4>#1</h4>
+                <p>ICC ODI Batter</p>
+            </div>
+            <div class="stat-item">
+                <h4>2024</h4>
+                <p>WPL Champion Captain</p>
+            </div>
+            <div class="stat-item">
+                <h4>224*</h4>
+                <p>Highest Individual Score</p>
             </div>
         </div>
-    </section>
+        <p style="margin-top: 40px;">Smriti Mandhana has won the ICC Women’s Cricketer of the Year award twice and led Royal Challengers Bangalore to their first title, proving her excellence on and off the field.</p>
+    </div>
+</section>
 
-    <!-- GALLERY SECTION -->
-    <section>
-        <span class="italic-sub">A Visual Journey</span>
-        <h2>The Gallery</h2>
-        <div class="gallery-grid content-box">
-            <div class="gallery-item"><img src="https://thebridge.in/h-upload/2024/03/18/52869-smriti-mandhana.webp" alt="Mandhana 1"></div>
-            <div class="gallery-item"><img src="https://www.royalchallengers.com/PRRCB01/public/styles/1061x767_landscape/public/2024-10/390000-ezgif.com-webp-to-jpg-converter.jpg?itok=-nH_dhgf" alt="Mandhana 2"></div>
-            <div class="gallery-item"><img src="https://i0.wp.com/indiasportshub.com/wp-content/uploads/2025/09/IMG_2813-scaled.jpeg" alt="Mandhana 3"></div>
-            <div class="gallery-item"><img src="https://im.rediff.com/cricket/2024/dec/24smriti.jpg?w=450&h=450" alt="Mandhana 4"></div>
-            <div class="gallery-item"><img src="https://thebridge.in/h-upload/2025/06/08/61842-smriti.webp" alt="Mandhana 5"></div>
-            <div class="gallery-item"><img src="https://ddindia.co.in/wp-content/uploads/2025/10/Smriti-Mandhana.jpg" alt="Mandhana 6"></div>
+<!-- FAN TRIBUTE -->
+<section>
+    <div class="tribute-card content-box">
+        <span class="italic-sub">A Letter to My Inspiration</span>
+        <h2>10 Years of Devotion</h2>
+        <p>To adore you for 10 years has been a journey of witnessing pure artistry.</p>
+        <p>I have seen you grow from a shy, promising teenager into the confident, smiling captain who carries the hopes of millions.</p>
+        <p>Your success has always felt like my own, and your struggles have shown me what true resilience looks like.</p>
+        <p>Watching you bat is not just watching a sport; it is seeing dedication, patience, and hard work turn into something magical.</p>
+        <p>Every run, every boundary, and every strategic decision on the field tells a story of commitment and love for the game.</p>
+        <p>Off the field, your humility, kindness, and generosity inspire countless people, showing that greatness is not just about talent, but also about heart.</p>
+        <p>You have taught me that dreams are possible when combined with effort, courage, and belief in oneself.</p>
+        <p>Thank you for the unforgettable hundreds, the captaincy that inspires a nation, and for being the incredible person you are, both as a player and as a human being.</p>
+        <p>Through every match, every victory, and even every loss, my admiration for you only grows stronger, and I feel lucky to witness your journey firsthand.</p>
+        <p style="font-family: 'Playfair Display'; font-style: italic; font-size: 1.5rem; margin-top: 20px;">Forever your fan, through every innings.</p>
+    </div>
+</section>
+
+<!-- PERSONAL FAN NOTE -->
+<section>
+    <div class="tribute-card content-box">
+        <span class="italic-sub">A Personal Note</span>
+        <h2>10 Years of Devotion – From Nimra</h2>
+        <div class="img-frame" style="margin-bottom:30px;">
+            <img src="https://pbs.twimg.com/media/G71pi9xbMAAPA9V.jpg" alt="Fan Love Image">
         </div>
-    </section>
+        <p>Smriti, for over a decade, I have followed your journey with endless admiration and love. Watching you evolve from a talented young girl into a confident, inspiring leader has been one of the most joyous experiences of my life.</p>
+        <p>Your dedication, resilience, and passion for cricket have taught me perseverance and grace. You have shown me that talent is important, but it is heart, discipline, and courage that define greatness.</p>
+        <p>Beyond your incredible achievements, your humility, kindness, and strength off the field inspire me every day. Watching you play reminds me to chase my own dreams with the same passion and determination you show in every innings.</p>
+        <p>Thank you for being my idol, my inspiration, and a guiding light. Forever your devoted fan, <strong>Nimra</strong>.</p>
+        <p style="font-family: 'Playfair Display'; font-style: italic; font-size: 1.5rem; margin-top: 20px;">Forever your fan, through every innings.</p>
+    </div>
+</section>
 
-    <!-- ACHIEVEMENTS -->
-    <section>
-        <div class="content-box">
-            <span class="italic-sub">Achievements & Honors</span>
-            <h2>Milestones</h2>
-            <div class="stats-container">
-                <div class="stat-item">
-                    <h4>2018</h4>
-                    <p>Arjuna Award</p>
-                </div>
-                <div class="stat-item">
-                    <h4>#1</h4>
-                    <p>ICC ODI Batter</p>
-                </div>
-                <div class="stat-item">
-                    <h4>2024</h4>
-                    <p>WPL Champion Captain</p>
-                </div>
-                <div class="stat-item">
-                    <h4>224*</h4>
-                    <p>Highest Individual Score</p>
-                </div>
-            </div>
-            <p style="margin-top: 40px;">Beyond the numbers, Smriti Mandhana has been the ICC Women's Cricketer of the Year twice (2018 and 2021), a feat that places her among the absolute immortals of the sport. She led Royal Challengers Bangalore to their maiden title, cementing her place as a leader of destiny.</p>
-        </div>
-    </section>
+<!-- FAN MESSAGE BOARD -->
+<section>
+    <div class="tribute-card content-box">
+        <span class="italic-sub">Write Your Note for Smriti</span>
+        <h2>Fan Messages</h2>
+        <p>Share your love and admiration for Smriti. Your message will appear below!</p>
+        <textarea id="fanMessage" placeholder="Write your note here..." style="width:100%; height:80px; padding:10px; font-family:'Montserrat'; font-size:1rem;"></textarea>
+        <br><br>
+        <button onclick="addMessage()" class="login-btn" style="padding:10px 30px; font-size:1rem;">Send</button>
+        <div id="messages" style="margin-top:30px; text-align:left;"></div>
+    </div>
+</section>
 
-    <!-- FAN TRIBUTE -->
-    <section>
-        <div class="tribute-card content-box">
-            <span class="italic-sub">A Letter to My Inspiration</span>
-            <h2>10 Years of Devotion</h2>
-            <p>To adore you for 10 years has been a journey of witnessing pure artistry. I have seen you evolve from a shy, promising teenager to the confident, smiling captain who carries the hopes of a billion people. Your success has felt like my own, and your struggles have taught me resilience.</p>
-            <p>Watching you bat isn't just watching a sport; it is watching a silent promise that hard work combined with grace can conquer the world. Thank you for the hundreds, the captaincy, and most importantly, for being the person you are off the field.</p>
-            <p style="font-family: 'Playfair Display'; font-style: italic; font-size: 1.5rem; margin-top: 20px;">Forever your fan, through every innings.</p>
-        </div>
-    </section>
+<footer>
+    <p>SMRITI MANDHANA 🤍</p>
+</footer>
 
-    <!-- PERSONAL FAN MESSAGE -->
-    <section>
-        <div class="tribute-card content-box">
-            <span class="italic-sub">A Personal Note</span>
-            <h2>10 Years of Devotion – From Nimra</h2>
-            <div class="img-frame" style="margin-bottom:30px;">
-                <img src="Screenshot 2026-02-01 131429.png" alt="Fan Love Image">
-            </div>
-            <p>
-                Smriti, for over a decade, I have followed your journey with endless admiration and love. From the very first time I saw your graceful cover drives and elegant shots, I knew you were someone extraordinary. Every match you played, every milestone you achieved, felt like a part of my own story. Watching you evolve from a talented young girl into a confident, inspiring leader has been one of the most joyous experiences of my life. Your dedication, resilience, and passion for cricket have taught me the true meaning of perseverance and grace. I have celebrated every boundary, every record, and every victory alongside you, and felt the highs and lows of your journey as if they were my own. Over these 10 years, you have not only inspired me on the field but also off it, showing me the power of humility, courage, and hard work. Smriti, thank you for being my idol, my inspiration, and a guiding light in my life. Forever your devoted fan, <strong>Nimra</strong>.
-            </p>
-        </div>
-    </section>
-
-    <footer>
-        <p>SMRITI MANDHANA 🤍</p>
-    </footer>
-
-    <script>
-        // --- LOGIN LOGIC ---
-        function unlockTribute() {
-            const name = document.getElementById('fanName').value;
-            if(name.trim() === "") {
-                alert("Please enter your name.");
-                return;
-            }
-            const screen = document.getElementById('login-screen');
-            screen.style.transform = 'translateY(-100%)';
-            setTimeout(() => screen.style.display = 'none', 1000);
-
-            // Show scroll indicator after login
-            const scrollIndicator = document.getElementById('scrollIndicator');
-            scrollIndicator.classList.add('show-scroll');
+<script>
+    function unlockTribute() {
+        const name = document.getElementById('fanName').value;
+        if(name.trim() === "") {
+            alert("Please enter your name.");
+            return;
         }
+        const screen = document.getElementById('login-screen');
+        screen.style.transform = 'translateY(-100%)';
+        setTimeout(() => screen.style.display = 'none', 1000);
 
-        // --- PARTICLE SYSTEM ---
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
+        const scrollIndicator = document.getElementById('scrollIndicator');
+        scrollIndicator.classList.add('show-scroll');
+    }
 
-        function initCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
+    function addMessage() {
+        const textarea = document.getElementById('fanMessage');
+        const messagesDiv = document.getElementById('messages');
+        const text = textarea.value.trim();
+        if(text === "") { alert("Please write something before submitting."); return; }
+        const msg = document.createElement('p');
+        msg.textContent = text;
+        msg.style.background = "#f5f5dc";
+        msg.style.padding = "10px";
+        msg.style.marginBottom = "10px";
+        msg.style.borderRadius = "5px";
+        msg.style.border = "1px solid #ede6d6";
+        messagesDiv.appendChild(msg);
+        textarea.value = "";
+    }
 
-        class Dust {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2;
-                this.speedY = Math.random() * 0.3 + 0.1;
-                this.opacity = Math.random() * 0.5;
-            }
-            update() {
-                this.y -= this.speedY;
-                if (this.y < 0) this.y = canvas.height;
-            }
-            draw() {
-                ctx.fillStyle = `rgba(139, 115, 85, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function initCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    class Dust { constructor() { this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height; this.size=Math.random()*2; this.speedY=Math.random()*0.3+0.1; this.opacity=Math.random()*0.5; } update() { this.y -= this.speedY; if(this.y<0)this.y=canvas.height; } draw() { ctx.fillStyle=`rgba(139,115,85,${this.opacity})`; ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fill(); } }
+    function setup() { initCanvas(); for(let i=0;i<80;i++)particles.push(new Dust()); }
+    function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); particles.forEach(p=>{p.update();p.draw();}); requestAnimationFrame(animate); }
 
-        function setup() {
-            initCanvas();
-            for (let i = 0; i < 80; i++) particles.push(new Dust());
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(animate);
-        }
-
-        // --- SCROLL OBSERVER ---
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.content-box').forEach(box => observer.observe(box));
-
-        window.addEventListener('resize', initCanvas);
-        setup();
-        animate();
-    </script>
+    const observer = new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+    document.querySelectorAll('.content-box').forEach(box=>observer.observe(box));
+    window.addEventListener('resize', initCanvas);
+    setup();
+    animate();
+</script>
 </body>
 </html>
